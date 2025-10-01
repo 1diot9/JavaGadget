@@ -62,17 +62,21 @@ public class UrlEncodeFile {
 
 然后通过postgre漏洞写文件：
 
-![img](img_Sink/image-1759327498632.png)
+![image-20251001230520878](img_Sink/image-20251001230520878.png)
 
 最后通过ClassPathXml读取：
 
 ![img](img_Sink/image-1759327506920.png)
+
+
 
 ## springboot临时文件法
 
 ### 一个请求
 
 发送一个请求，其中带有临时文件和xml加载路径。
+
+
 
 ![img](img_Sink/image-1759327506897.png)
 
@@ -81,6 +85,8 @@ public class UrlEncodeFile {
 先发送临时文件请求，主要目标是这个临时文件要长期存活。
 
 可以通过修改Content-Length + 删掉 boundary  + 大段空格 实现。
+
+
 
 ![img](img_Sink/image-1759327515374.png)
 
