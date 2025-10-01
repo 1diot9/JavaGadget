@@ -42,11 +42,11 @@
 
 接下来利用https://github.com/c0ny1/ascii-jar 项目的ascii-jar-2.py，制作全都是ascii范围内的jar包。注意PADDING_DATA要放到末尾，因为xml文件开头是固定的。
 
-![img](img_Sink/image.png)
+![img](Sink/image.png)
 
 制作出来的jar包，范围都在00~7F内：
 
-![img](img_Sink/image-1759327498471.png)
+![img](Sink/image-1759327498471.png)
 
 接下来对jar包进行URL编码，这里使用Java脚本，如果用python的话，一定要确定自己编码后的格式正确：
 
@@ -62,11 +62,11 @@ public class UrlEncodeFile {
 
 然后通过postgre漏洞写文件：
 
-![img](img_Sink/image-1759327498632.png)
+![img](Sink/image-1759327498632.png)
 
 最后通过ClassPathXml读取：
 
-![img](img_Sink/image-1759327506920.png)
+![img](Sink/image-1759327506920.png)
 
 ## springboot临时文件法
 
@@ -74,7 +74,7 @@ public class UrlEncodeFile {
 
 发送一个请求，其中带有临时文件和xml加载路径。
 
-![img](img_Sink/image-1759327506897.png)
+![img](Sink/image-1759327506897.png)
 
 ### 异步请求
 
@@ -82,7 +82,7 @@ public class UrlEncodeFile {
 
 可以通过修改Content-Length + 删掉 boundary  + 大段空格 实现。
 
-![img](img_Sink/image-1759327515374.png)
+![img](Sink/image-1759327515374.png)
 
 然后再正常发送另一个利用请求即可
 
